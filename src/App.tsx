@@ -1,12 +1,16 @@
-import React, { createElement as e, useState } from "react";
+import React from "react";
+import { Product } from "./components/Product";
+import { products } from "./data/products";
 
 function App() {
-
-  const [count, setCount] =  useState(0)
-
   // return <h1>Hello React!!!</h1>;
   // return e('h1', {},'Hello from js')
-  return ()
+  return (
+    <div className="container mx-auto max-w-2xl pt5">
+      {products.map(product => <Product product={product} key={product.id}/>)}
+    </div>
+  );
 }
 
 export default App;
+
